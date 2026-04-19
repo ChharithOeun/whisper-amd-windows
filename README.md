@@ -331,7 +331,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 
 - **Issues & Questions**: [GitHub Issues](https://github.com/ChharithOeun/whisper-amd-windows/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/ChharithOeun/whisper-amd-windows/discussions)
-- **Buy Me a Coffee**: [Support development](https://www.buymeacoffee.com/chharithoeun)
+- **Buy Me a Coffee**: [Support development](https://buymeacoffee.com/chharith)
 
 ---
 
