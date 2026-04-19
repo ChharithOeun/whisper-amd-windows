@@ -1,9 +1,12 @@
 # Whisper on AMD Windows
 
+[![CI](https://github.com/ChharithOeun/whisper-amd-windows/actions/workflows/ci.yml/badge.svg)](https://github.com/ChharithOeun/whisper-amd-windows/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python: 3.10+](https://img.shields.io/badge/Python-3.10%2B-3776ab.svg)](https://www.python.org/downloads/)
 [![Tested: RX 5700 XT](https://img.shields.io/badge/Tested%20GPU-RX%205700%20XT%20(RDNA1)-brightgreen)](https://www.amd.com/en/products/graphics/amd-radeon-rx-5700-xt)
 [![AMD RDNA Support](https://img.shields.io/badge/AMD%20RDNA-1%2F2%2F3%2F4-blue)](https://en.wikipedia.org/wiki/RDNA)
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows%2010%2F11-0078d4)](https://www.microsoft.com/windows)
+[![Buy Me A Coffee](https://img.shields.io/badge/Support-Buy%20Me%20A%20Coffee-ffdd00?logo=buymeacoffee)](https://buymeacoffee.com/chharith)
 
 Run OpenAI's [Whisper](https://github.com/openai/whisper) speech-to-text model on AMD GPUs on Windows with zero CUDA dependency. This guide covers two GPU acceleration paths plus CPU fallback, tested on **RX 5700 XT (gfx1010 / RDNA1)**.
 
