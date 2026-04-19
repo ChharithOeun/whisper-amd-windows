@@ -1,0 +1,31 @@
+{
+  "transcription": {
+    "model": "base",
+    "language": null,
+    "device": "auto",
+    "compute_type": "float16",
+    "beam_size": 5,
+    "conditions": {
+      "temperature": [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]
+    }
+  },
+  "output": {
+    "format": ["txt", "srt"],
+    "output_dir": "./transcripts",
+    "overwrite": false
+  },
+  "performance": {
+    "batch_size": 1,
+    "num_workers": 0,
+    "gpu_memory_fraction": 0.8
+  },
+  "audio": {
+    "supported_formats": ["mp3", "wav", "m4a", "flac", "ogg", "wma"],
+    "sample_rate": 16000,
+    "mono": true
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "transcription.log"
+  }
+}
