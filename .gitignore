@@ -1,0 +1,68 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Whisper model cache (large files)
+*.model
+whisper-tiny/
+whisper-base/
+whisper-small/
+whisper-medium/
+whisper-large/
+.cache/
+
+# Output files
+*.txt
+*.srt
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+
+# Test/temp files
+*.tmp
+test_audio*
+benchmark_results*
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local settings
+.env
+.env.local
+secrets.json
