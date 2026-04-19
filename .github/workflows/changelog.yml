@@ -1,0 +1,54 @@
+name: Changelog
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  changelog:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install changelog tools
+      run: |
+        pip install python-frontmatter pyyaml
+
+    - name: Generate changelog entry
+      run: |
+        # Get the latest commit message
+        COMMIT_MSG=$(git log -1 --pretty=%B)
+        COMMIT_SHA=$(git log -1 --pretty=%h)
+        COMMIT_DATE=$(git log -1 --pretty=%ai | cut -d' ' -f1)
+
+        # Append to CHANGELOG if it exists, else create it
+        if [ ! -f CHANGELOG.md ]; then
+          echo "# Changelog" > CHANGELOG.md
+          echo "" >> CHANGELOG.md
+        fi
+
+        # Insert new entry after header
+        {
+          head -n 2 CHANGELOG.md
+          echo "## [$COMMIT_DATE] - $COMMIT_SHA"
+          echo "### Changed"
+          echo "- $COMMIT_MSG"
+          echo ""
+          tail -n +3 CHANGELOG.md
+        } > CHANGELOG.md.tmp && mv CHANGELOG.md.tmp CHANGELOG.md
+
+    - name: Commit changelog
+      run: |
+        git config user.name "GitHub Actions"
+        git config user.email "actions@github.com"
+        git add CHANGELOG.md
+        git commit -m "chore: update changelog [skip ci]" --allow-empty || true
+        git push origin main || true
