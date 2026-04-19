@@ -1,0 +1,16 @@
+# Whisper AMD Windows - Core Dependencies
+#
+# Install with: pip install -r requirements.txt
+
+# Speech-to-text engine
+faster-whisper>=0.9.0
+
+# GPU acceleration (AMD via DirectML)
+# Windows only - provides DirectML support for any AMD DX12 GPU
+onnxruntime-directml>=1.17.0
+
+# Optional: For better ONNX model optimization
+onnx>=1.14.0
+
+# Utilities
+numpy>=1.21.0
